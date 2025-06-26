@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Katik - Kalkulator Matematik</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h2>Welcome to Katik</h2>
-    <p>Hai Sobat, Selamat datang di Katik :)</p>
-    <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
+    <h2>Katik - Kalkulator Matematik</h2>
+    <p>Selamat datang di Katik! Web apps sederhana untuk menghitung luas & keliling bangun datar.</p>
+
     <div class="nav">
-      <button onclick="showSection('luas')">Segitiga</button>
+      <button onclick="showSection('segitiga')">Segitiga</button>
+      <button onclick="showSection('persegi')">Persegi</button>
+      <button onclick="showSection('lingkaran')">Lingkaran</button>
     </div>
 
-    <!-- Luas Segitiga -->
-    <section id="luas" class="card">
-      <h3>Luas Segitiga</h3>
-      <img src="https://i.ibb.co/WFYZ1N7/segitiga.png" alt="segitiga">
-      <p><strong>Rumus:</strong> L = 1/2 × a × t</p>
-      <p><strong>Di mana:</strong><br>
-        L = Luas<br>
-        a = Alas<br>
-        t = Tinggi
-      </p>
+    <!-- Segitiga -->
+    <section id="segitiga" class="card">
+      <h3>Segitiga</h3>
+      <img src="https://i.pinimg.com/736x/09/e8/9c/09e89cbdcea5d67d8f49ba29c59a4677.jpg" alt="Segitiga" width="200"/>
+      <p><strong>Luas:</strong> L = 1/2 × a × t</p>
+      <p><strong>Keliling:</strong> K = S1 + S2 + S3</p>
       <h4>Hitung Luas Segitiga</h4>
-      <input type="number" id="alas" placeholder="Masukkan alas">
-      <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+      <input type="number" id="alas" placeholder="Alas">
+      <input type="number" id="tinggi" placeholder="Tinggi">
       <div id="hasilLuas"></div>
-      <button onclick="hitungLuas()">Hitung</button>
-      <button onclick="resetLuas()">Reset</button>
-    </section>
-
-    <!-- Keliling Segitiga -->
-    <section id="keliling" class="card">
-      <h3>Keliling Segitiga</h3>
-      <img src="https://i.ibb.co/WFYZ1N7/segitiga.png" alt="segitiga">
-      <p><strong>Rumus:</strong> K = S1 + S2 + S3</p>
-      <p><strong>Di mana:</strong><br>
-        K = Keliling<br>
-        S1, S2, S3 = Sisi-sisi segitiga
-      </p>
       <h4>Hitung Keliling Segitiga</h4>
       <input type="number" id="s1" placeholder="Sisi A">
       <input type="number" id="s2" placeholder="Sisi B">
       <input type="number" id="s3" placeholder="Sisi C">
       <div id="hasilKeliling"></div>
-      <button onclick="hitungKeliling()">Hitung</button>
-      <button onclick="resetKeliling()">Reset</button>
+      <button onclick="hitungLuas()">Hitung Luas</button>
+      <button onclick="hitungKeliling()">Hitung Keliling</button>
+      <button onclick="resetSegitiga()">Reset</button>
+    </section>
+
+    <!-- Persegi -->
+    <section id="persegi" class="card">
+      <h3>Persegi</h3>
+      <img src="https://i.pinimg.com/736x/3d/00/12/3d0012971d664495d9a6068bc26feeee.jpg" alt="Persegi" width="200"/>
+      <p><strong>Luas:</strong> L = S × S</p>
+      <p><strong>Keliling:</strong> K = 4 × S</p>
+      <h4>Hitung Persegi</h4>
+      <input type="number" id="sisi" placeholder="Sisi">
+      <div id="hasilPersegi"></div>
+      <button onclick="hitungPersegi()">Hitung</button>
+      <button onclick="resetPersegi()">Reset</button>
+    </section>
+
+    <!-- Lingkaran -->
+    <section id="lingkaran" class="card">
+      <h3>Lingkaran</h3>
+      <img src="https://i.pinimg.com/736x/cd/f6/c3/cdf6c30af44ef4d7cf3e1f15952f2990.jpg" alt="Lingkaran" width="200"/>
+      <p><strong>Luas:</strong> L = π × r²</p>
+      <p><strong>Keliling:</strong> K = 2 × π × r</p>
+      <h4>Hitung Lingkaran</h4>
+      <input type="number" id="jari" placeholder="Jari-jari">
+      <div id="hasilLingkaran"></div>
+      <button onclick="hitungLingkaran()">Hitung</button>
+      <button onclick="resetLingkaran()">Reset</button>
     </section>
   </div>
 
